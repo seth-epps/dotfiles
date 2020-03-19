@@ -1,5 +1,5 @@
-# dotfiles
-This is where I've hosted my script to bootstrap laptop setup to ensure that anyone onboarding can easily setup their dev environment.
+# macOS
+This is where I've hosted my script to bootstrap laptop setup
 
 # Running
 Running the bootstrap should be as simple as executing `./bootstrap.sh` from the command line. The only noteable thing I encountered was the user input required by the oh-my-zsh installation.
