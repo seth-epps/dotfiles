@@ -39,6 +39,7 @@ export GOPATH=$HOME/go
 
 ## pyenv initialization
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 ## start virtualenv initialization >>>>
 #

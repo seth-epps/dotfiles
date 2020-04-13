@@ -53,13 +53,13 @@ brew install watch
 brew install python
 
 #!!!
-# pyenv DOES NOT behave well with standardvirtualenv so 
+# pyenv DOES NOT behave well with standard virtualenv so 
 # this is a better way to do it IMO
 #!!!
 pip install virtualenv
 pip install virtualenvwrapper
 
-brew install pyenv
+brew install pyenv pyenv-virtualenv
 brew install pyenv-virtualenvwrapper
 
 pyenv install $PYTHON_VERSION
