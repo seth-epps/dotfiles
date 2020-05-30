@@ -85,6 +85,8 @@ brew install go
 
 go get golang.org/x/tools/cmd/godoc
 go get github.com/golang/lint/golint
+go get golang.org/x/tools/gopls@latest
+
 
 # Install ngrok
 brew cask install ngrok
