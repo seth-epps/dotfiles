@@ -50,14 +50,6 @@ export VIRTUALENVWRAPPER_PYTHON=$HOMEBREW_PYTHON_BIN/python
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 source /usr/local/bin/virtualenvwrapper.sh
 
-# Use this method to update the shell and 
-# setup the virtualenvwrapper to work with
-# pyenv
-pyshell-venv() {
-  pyenv shell $1
-  pyenv virtualenvwrapper
-}
-
 ## end virutalenv initialize <<<<
 
 ## Environment variable necessary for packages

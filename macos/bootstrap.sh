@@ -60,7 +60,6 @@ pip install virtualenv
 pip install virtualenvwrapper
 
 brew install pyenv pyenv-virtualenv
-brew install pyenv-virtualenvwrapper
 
 pyenv install $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
@@ -69,8 +68,12 @@ pyenv global $PYTHON_VERSION
 ## Switch the shell verison with
 # > pyenv shell 3.8.0
 #
-## My venv workflow is to set the shell, then create the environment
-# > pyenv shell <version> && mkvirtualenv <project>
+# virtualenv workflow:
+# > pyenv virtualenv <python-version> <name>
+# > pyenv activate <name>
+#
+# To automatically set a virtual environment for a given directory
+# add it to the .python-version file or create with pyenv local <name>
 ####
 
 # Install gotop for system monitoring
