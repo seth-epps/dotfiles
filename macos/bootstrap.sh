@@ -4,10 +4,6 @@ PYTHON_VERSION=3.8.0
 NODE_VERSION=10.17.0
 JAVA_VERSION=11
 
-# Add dot files to home
-cp .zshrc $HOME
-cp .vimrc $HOME
-
 # Install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -18,17 +14,14 @@ brew install jq
 brew install zsh
 
 # Install oh-my-zsh
-# !!!
-# This has a user input to set zsh to default shell
-# !!!
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" -s --batch && echo "Install complete!"
+
+# Add dot files to home
+cp .zshrc $HOME
+cp .vimrc $HOME
 
 # Install syntax highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# Install spaceship zsh theme
-git clone git@github.com:denysdovhan/spaceship-prompt.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/spaceship-prompt
-ln -s ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/spaceship.zsh-theme
 
 # Install pure zsh theme
 git clone https://github.com/sindresorhus/pure.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/functions/pure
@@ -57,7 +50,6 @@ brew install python
 # this is a better way to do it IMO
 #!!!
 pip install virtualenv
-pip install virtualenvwrapper
 
 brew install pyenv pyenv-virtualenv
 
@@ -80,9 +72,6 @@ pyenv global $PYTHON_VERSION
 brew tap cjbassi/gotop
 brew install gotop
 
-# Install neofetch for system overview
-brew install neofetch
-
 # Install GoLang
 brew install go
 
@@ -92,41 +81,35 @@ go get golang.org/x/tools/gopls@latest
 
 
 # Install ngrok
-brew cask install ngrok
+brew install --cask ngrok
 
 # Install jdk
 brew tap AdoptOpenJDK/openjdk
-brew cask install adoptopenjdk$JAVA_VERSION
+brew install --cask adoptopenjdk$JAVA_VERSION
 
 # Install maven
 brew install maven
 
 # Install visual studio code
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 
 # Install IntelliJ
-brew cask install intellij-idea-ce
-
-# Install PyCharm
-brew cask install pycharm-ce
+brew install --cask intellij-idea-ce
 
 # Install iTerm
-brew cask install iterm2
+brew install --cask iterm2
 
 # Install slack
-brew cask install slack
+brew install --cask slack
 
 # Install chrome
-brew cask install google-chrome
+brew install --cask google-chrome
 
 # Install chromedriver 
-brew cask install chromedriver
+brew install --cask chromedriver
 
-# Install mysql workbench
-brew cask install mysqlworkbench
-
-# Install postman
-brew cask install postman
+# Install Docker
+brew install --cask docker
 
 open -a iTerm
 

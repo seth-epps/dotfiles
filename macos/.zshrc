@@ -1,8 +1,5 @@
 export ZSH="/Users/sepps/.oh-my-zsh"
 
-ZSH_THEME="spaceship"
-SPACESHIP_CHAR_SYMBOL="❯ "
-
 # If using pure, you need to initialize the prompt
 fpath+=("$ZSH/custom/functions/pure")
 autoload -U promptinit; promptinit
@@ -25,7 +22,6 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 ## Support opening vscode from terminal via `code` command
 PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
-export PATH
 
 ## nvm Config
 export NVM_DIR=~/.nvm
@@ -38,22 +34,12 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/
 export GOPATH=$HOME/go
 
 ## pyenv initialization
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-## start virtualenv initialization >>>>
-#
-# We want to use the homebrew installed virtualenv because pyenv does not play nice with virtualenv
-
-export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=$HOMEBREW_PYTHON_BIN/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-source /usr/local/bin/virtualenvwrapper.sh
-
-## end virutalenv initialize <<<<
 
 ## Environment variable necessary for packages
-export PIP_INDEX_URL=https://devpi.corp.surveymonkey.com/monkey/monkey
-export CFLAGS="-I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include $CFLAGS"
-export LDFLAGS="-I$(brew --prefix openssl)/include -L$(brew --prefix openssl)/lib $LDFLAGS"
+export CFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
+export CPPFLAGS="-I/usr/local/opt/zlip/include"
+export LDFLAGS="-I/usr/local/opt/openssl/include -L$/usr/local/opt/readline/lib -L/usr/local/opt/zlip/lib -L$/usr/local/opt/bzip2/lib $LDFLAGS"
 
+export PATH
