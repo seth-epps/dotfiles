@@ -90,6 +90,9 @@ brew install --cask adoptopenjdk$JAVA_VERSION
 # Install maven
 brew install maven
 
+# Rectangle window management
+brew install --cask rectangle
+
 # Install visual studio code
 brew install --cask visual-studio-code
 
