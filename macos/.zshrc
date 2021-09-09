@@ -38,8 +38,8 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 ## Environment variable necessary for packages
-export CFLAGS="-I/usr/local/opt/openssl/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
+export CFLAGS="-I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
 export CPPFLAGS="-I/usr/local/opt/zlip/include"
-export LDFLAGS="-I/usr/local/opt/openssl/include -L$/usr/local/opt/readline/lib -L/usr/local/opt/zlip/lib -L$/usr/local/opt/bzip2/lib $LDFLAGS"
+export LDFLAGS="-I/usr/local/opt/openssl@1.1/lib -L$/usr/local/opt/readline/lib -L/usr/local/opt/zlip/lib -L$/usr/local/opt/bzip2/lib $LDFLAGS"
 
 export PATH
