@@ -39,7 +39,7 @@ eval "$(pyenv init -)"
 
 ## Environment variable necessary for packages
 export CFLAGS="-I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
-export CPPFLAGS="-I/usr/local/opt/zlip/include"
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib -L$/usr/local/opt/readline/lib -L/usr/local/opt/zlip/lib -L$/usr/local/opt/bzip2/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib -L$/usr/local/opt/readline/lib -L/usr/local/opt/zlib/lib -L$/usr/local/opt/bzip2/lib $LDFLAGS"
 
 export PATH
