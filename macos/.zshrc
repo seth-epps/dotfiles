@@ -1,4 +1,4 @@
-export ZSH="/Users/sepps/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # If using pure, you need to initialize the prompt
 fpath+=("$ZSH/custom/functions/pure")
@@ -23,12 +23,11 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 ## Support opening vscode from terminal via `code` command
 PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 
-## nvm Config
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+## fnm Config
+eval "$(fnm env)"
 
 ## Java config
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/
 
 ## GoLang config
 export GOPATH=$HOME/go

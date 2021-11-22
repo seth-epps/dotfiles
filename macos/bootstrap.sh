@@ -1,8 +1,7 @@
 #!/bin/bash
 
-PYTHON_VERSION=3.8.0
-NODE_VERSION=10.17.0
-JAVA_VERSION=11
+PYTHON_VERSION=3.9.7
+NODE_VERSION=16
 
 # Install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -14,7 +13,7 @@ brew install jq
 brew install zsh
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" -s --batch && echo "Install complete!"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" -s --unattended && echo "Install complete!"
 
 # Add dot files to home
 cp .zshrc $HOME
@@ -33,11 +32,9 @@ brew install git
 brew install mysql
 
 # Install node
-mkdir $HOME/.nvm
-brew install nvm
-source $(brew --prefix nvm)/nvm.sh
-nvm install $NODE_VERSION
-nvm alias default $NODE_VERSION
+brew install fnm
+eval "$(fnm env)"
+fnm install $NODE_VERSION
 
 # Install watch
 brew install watch
@@ -84,8 +81,8 @@ go get golang.org/x/tools/gopls@latest
 brew install --cask ngrok
 
 # Install jdk
-brew tap AdoptOpenJDK/openjdk
-brew install --cask adoptopenjdk$JAVA_VERSION
+# at this time it's jdk-17
+brew install --cask temurin
 
 # Install maven
 brew install maven
@@ -113,6 +110,8 @@ brew install --cask chromedriver
 
 # Install Docker
 brew install --cask docker
+
+cp com.googlecode.iterm2.plist $HOME/Library/Preferences/
 
 open -a iTerm
 
