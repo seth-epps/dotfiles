@@ -82,6 +82,10 @@ brew install --cask ngrok
 
 # Install jdk
 # at this time it's jdk-17
+###
+# To install a different version
+# brew tap homebrew/cask-versions
+# brew search --casks temurin # choose appropriate version and install as below
 brew install --cask temurin
 
 # Install maven
