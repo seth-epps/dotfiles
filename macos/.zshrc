@@ -36,6 +36,9 @@ export GOPATH=$HOME/go
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+## k8s auto-completes
+source <(kubectl completion zsh)
+
 ## Environment variable necessary for packages
 export CFLAGS="-I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"

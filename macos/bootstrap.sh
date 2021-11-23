@@ -39,6 +39,9 @@ fnm install $NODE_VERSION
 # Install watch
 brew install watch
 
+# Install bash completion for k8s shortcuts 
+brew install bash-completion
+
 # Install python
 brew install python
 
