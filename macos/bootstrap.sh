@@ -4,7 +4,7 @@ PYTHON_VERSION=3.9.7
 NODE_VERSION=16
 
 # Install brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install jq
 brew install jq
