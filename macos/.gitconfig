@@ -1,0 +1,6 @@
+[user]
+	name = Seth Epps
+	email = seth.d.epps@gmail.com
+
+[includeIf "gitdir:~/dev/job/"] # HS Stuff
+    path = .gitconfig-job
