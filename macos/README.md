@@ -1,6 +1,9 @@
 # macOS
 This is where I've hosted my script to bootstrap laptop setup
 
+# Gitconfig
+Before running the bootstrap, you should update .gitconfig and .gitconfig-job to refer to your specific user emails and directories.
+
 # Running
 Running the bootstrap should be as simple as executing `./bootstrap.sh` from the command line. The only noteable thing I encountered was the user input required by the oh-my-zsh installation.
 
