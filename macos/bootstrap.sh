@@ -75,10 +75,8 @@ brew install gotop
 # Install GoLang
 brew install go
 
-go get golang.org/x/tools/cmd/godoc
-go get github.com/golang/lint/golint
-go get golang.org/x/tools/gopls@latest
-
+go install golang.org/x/tools/gopls@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
 
 # Install ngrok
 brew install --cask ngrok
