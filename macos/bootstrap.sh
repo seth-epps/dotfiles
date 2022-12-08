@@ -21,6 +21,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # Add dot files to home
 cp .zshrc $HOME
 cp .vimrc $HOME
+cp .p10k.zsh $HOME
 
 # Install fonts (requires minimum curl version 7.73.0)
 wget -P ${HOME}/Library/Fonts "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
@@ -31,8 +32,8 @@ wget -P ${HOME}/Library/Fonts "https://github.com/romkatv/powerlevel10k-media/ra
 # Install syntax highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-# Install pure zsh theme
-git clone https://github.com/sindresorhus/pure.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/functions/pure
+# Install powerlevel zsh theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # Install git
 brew install git

@@ -1,14 +1,20 @@
-export ZSH="$HOME/.oh-my-zsh"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# If using pure, you need to initialize the prompt
-fpath+=("$ZSH/custom/functions/pure")
-autoload -U promptinit; promptinit
-prompt pure
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   git zsh-syntax-highlighting
 )
 source $ZSH/oh-my-zsh.sh
+
+# source powerlevel config
+source $HOME/.p10k.zsh
 
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
