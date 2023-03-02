@@ -8,6 +8,8 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 DISABLE_AUTO_UPDATE="true"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# Remove '%' EOL marker
+PROMPT_EOL_MARK=
 
 plugins=(
   git zsh-syntax-highlighting
