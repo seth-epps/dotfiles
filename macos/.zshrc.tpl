@@ -23,7 +23,7 @@ alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 ## This ammendment to path is to support the homebrew unversioned symlinks to
 ## its python installation
-HOMEBREW_PYTHON_BIN=/usr/local/opt/python/libexec/bin
+HOMEBREW_PYTHON_BIN=${BREW_PREFIX}/opt/python/libexec/bin
 PATH=$HOMEBREW_PYTHON_BIN:$PATH
 
 # This ammendment to path is to support homebrew installed binaries
@@ -49,8 +49,8 @@ eval "$(pyenv init -)"
 source <(kubectl completion zsh)
 
 ## Environment variable necessary for packages
-export CFLAGS="-I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/bzip2/include -I/usr/local/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib -L$/usr/local/opt/readline/lib -L/usr/local/opt/zlib/lib -L$/usr/local/opt/bzip2/lib $LDFLAGS"
+export CFLAGS="-I${BREW_PREFIX}/opt/openssl@1.1/include -I${BREW_PREFIX}/opt/bzip2/include -I${BREW_PREFIX}/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
+export CPPFLAGS="-I${BREW_PREFIX}/opt/zlib/include"
+export LDFLAGS="-L${BREW_PREFIX}/opt/openssl@1.1/lib -L$${BREW_PREFIX}/opt/readline/lib -L${BREW_PREFIX}/opt/zlib/lib -L$${BREW_PREFIX}/opt/bzip2/lib $LDFLAGS"
 
 export PATH

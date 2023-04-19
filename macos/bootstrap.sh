@@ -1,5 +1,21 @@
 #!/bin/bash
 
+mkdir -p $HOME/dev
+
+if [ "$1" ] && [ "$2" ]
+then
+    # setup git-config
+    job_workspace=$1
+    job_email=$2
+
+    echo "Setting up $job_workspace with email $job_email"
+
+    mkdir -p $HOME/dev/$job_workspace
+
+    sed -e "s/\${JOB_EMAIL}/$job_email/g" .gitconfig-job.tpl > $HOME/.gitconfig-$job_workspace
+    sed -e "s/\${JOB_WORKSPACE}/$job_workspace/g" .gitconfig.tpl > $HOME/.gitconfig
+fi
+
 PYTHON_VERSION=3.9.7
 NODE_VERSION=16
 
@@ -9,8 +25,9 @@ NODE_VERSION=16
 # Install wget
 brew install wget
 
-# Install jq
+# Install jq / yq
 brew install jq
+brew install yq
 
 # Install zsh
 brew install zsh
@@ -18,8 +35,8 @@ brew install zsh
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" -s --unattended && echo "Install complete!"
 
-# Add dot files to home
-cp .zshrc $HOME
+# Add dotfiles to home
+sed -e "s/\${BREW_PREFIX}/$(brew --prefix | sed 's/\//\\\//g')/g" .zshrc.tpl > $HOME/.zshrc
 cp .vimrc $HOME
 cp .p10k.zsh $HOME
 
@@ -78,10 +95,6 @@ pyenv global $PYTHON_VERSION
 # add it to the .python-version file or create with pyenv local <name>
 ####
 
-# Install gotop for system monitoring
-brew tap cjbassi/gotop
-brew install gotop
-
 # Install GoLang
 brew install go
 
@@ -123,9 +136,18 @@ brew install --cask google-chrome
 # Install chromedriver 
 brew install --cask chromedriver
 
-# Install Docker
-brew install --cask docker
+# Install rancher desktop
+brew install --cask rancher
 
+# Install docker cli and compose plugin
+brew install docker docker-compose 
+mkdir -p ~/.docker/cli-plugins
+ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+
+# Install lima and colima for docker 
+brew install lima colima
+
+# copy iterm configs
 cp com.googlecode.iterm2.plist $HOME/Library/Preferences/
 
 open -a iTerm
