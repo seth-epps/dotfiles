@@ -147,6 +147,9 @@ ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plu
 # Install lima and colima for docker 
 brew install lima colima
 
+# Install kubectl
+brew install kubectl
+
 # copy iterm configs
 cp com.googlecode.iterm2.plist $HOME/Library/Preferences/
 
