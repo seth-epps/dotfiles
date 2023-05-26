@@ -51,6 +51,6 @@ source <(kubectl completion zsh)
 ## Environment variable necessary for packages
 export CFLAGS="-I${BREW_PREFIX}/opt/openssl@1.1/include -I${BREW_PREFIX}/opt/bzip2/include -I${BREW_PREFIX}/opt/readline/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include $CFLAGS"
 export CPPFLAGS="-I${BREW_PREFIX}/opt/zlib/include"
-export LDFLAGS="-L${BREW_PREFIX}/opt/openssl@1.1/lib -L$${BREW_PREFIX}/opt/readline/lib -L${BREW_PREFIX}/opt/zlib/lib -L$${BREW_PREFIX}/opt/bzip2/lib $LDFLAGS"
+export LDFLAGS="-L${BREW_PREFIX}/opt/openssl@1.1/lib -L${BREW_PREFIX}/opt/readline/lib -L${BREW_PREFIX}/opt/zlib/lib -L${BREW_PREFIX}/opt/bzip2/lib $LDFLAGS"
 
 export PATH
