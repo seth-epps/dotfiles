@@ -34,6 +34,7 @@ PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 
 ## fnm Config
 eval "$(fnm env)"
+export PATH=$HOME/.fnm:$PATH
 
 ## Java config
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/
