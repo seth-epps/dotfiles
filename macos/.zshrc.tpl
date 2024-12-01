@@ -27,14 +27,14 @@ HOMEBREW_PYTHON_BIN=${BREW_PREFIX}/opt/python/libexec/bin
 PATH=$HOMEBREW_PYTHON_BIN:$PATH
 
 # This ammendment to path is to support homebrew installed binaries
-PATH=/usr/local/bin:/usr/local/sbin:$PATH
+PATH=${BREW_PREFIX}/bin:${BREW_PREFIX}/sbin:$PATH
 
 ## Support opening vscode from terminal via `code` command
 PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 
 ## fnm Config
 eval "$(fnm env)"
-export PATH=$HOME/.fnm:$PATH
+PATH=$HOME/.fnm:$PATH
 
 ## Java config
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home/

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 mkdir -p $HOME/dev
 
@@ -21,6 +22,9 @@ NODE_VERSION=16
 
 # Install brew
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# temporarily set PATH for homebrew binaries
+PATH=/opt/homebrew/bin:/opt/homebrew/opt/python/libexec/bin:$PATH
 
 # Install wget
 brew install wget
@@ -71,12 +75,13 @@ brew install bash-completion
 
 # Install python
 brew install python
+brew install pipx
 
 #!!!
 # pyenv DOES NOT behave well with standard virtualenv so 
 # this is a better way to do it IMO
 #!!!
-pip install virtualenv
+pipx install virtualenv
 
 brew install pyenv pyenv-virtualenv
 
