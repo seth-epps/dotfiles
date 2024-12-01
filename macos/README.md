@@ -1,7 +1,21 @@
 # macOS
 Bootstrap mac setup
 
-## Running
+## Recent issue
+***Note*** this is setup  with the arm macbook in mind
+
+This can't run unless the user running the script can run as root. Homebrew won't install normally
+with `sudo` in non-interactive so you should set the admin users up with passwordless sudo
+
+I've updated `/private/etc/sudoersc` with
+
+```
+%admin		ALL = (ALL) NOPASSWD: ALL
+```
+
+to simplify this.
+
+## Run
 Running the bootstrap should be as simple as executing `./bootstrap.sh <job_workspace> <job_email>` from the command line. The only notable thing I encountered was the potential user input required by the oh-my-zsh installation.
 
 ## Notes and Caveats
