@@ -145,9 +145,10 @@ brew install --cask chromedriver
 brew install --cask rancher
 
 # Install docker cli and compose plugin
-brew install docker docker-compose 
+brew install docker docker-compose docker-buildx
 mkdir -p ~/.docker/cli-plugins
 ln -sfn $(brew --prefix)/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+ln -sfn $(brew --prefix)/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
 
 # Install lima and colima for docker 
 brew install lima colima
